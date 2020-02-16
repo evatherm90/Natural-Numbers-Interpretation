@@ -6,12 +6,17 @@
 package com.mycompany.naturalnumbersinterpretation;
 
 /**
- *
- * @author antonis
+ *this class provides the rules that make a phone number valid for a country
+ * 
  */
 public class NumberValidation {
 
-
+/**
+ * The method validateStartOfDigits checks if 
+ * the given number is a valid Greek phone number
+ * @param number is the phone number given as a numeric String 
+ * @return true if it is a valid phone number
+ */
     public boolean validateStartOfDigits(String number) {
         if ((number.length() == 10) && (number.startsWith("2") || number.startsWith("69"))) {
             return true;

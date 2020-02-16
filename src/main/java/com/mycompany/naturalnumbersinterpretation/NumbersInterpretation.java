@@ -6,11 +6,6 @@
 package com.mycompany.naturalnumbersinterpretation;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-import javax.swing.JTree;
-import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeNode;
 
 /**
  *
@@ -25,8 +20,8 @@ public class NumbersInterpretation {
         String[] n = iv.getInput();
 
         if (iv.isValid(n)) {
-            ArrayList<String> results=nd.calculateAllPossiblePhoneNumbers(n);
-            for(String result:results){
+            ArrayList<String> results = nd.calculateAllPossiblePhoneNumbers(n);
+            for (String result : results) {
                 System.out.println(result);
             }
         } else {

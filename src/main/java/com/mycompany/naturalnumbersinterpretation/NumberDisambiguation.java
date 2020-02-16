@@ -8,18 +8,49 @@ package com.mycompany.naturalnumbersinterpretation;
 import java.util.ArrayList;
 
 /**
+ * This class provides all the methods to disambiguate the number input
  *
- * @author antonis
  */
 public class NumberDisambiguation {
 
+    /**
+     * The counter for the interpretations given in allPossiblePhoneNumbers
+     * method
+     */
     private int interpretation;
 
+    /**
+     * the calculateAllPossiblePhoneNumbers method calculates all possible
+     * number combinations that can occur based on the user's input and the
+     * given disambiguation rules
+     *
+     * @param input is user's input in a String array it is expected to consist
+     * of positive integers that have maximum three digits
+     * @return an arrayList with all possible phone numbers and the result of
+     * number validation, ready to print in the form: "Interpretation 1:
+     * 21693664	[phone number: INVALID]"
+     */
+    public ArrayList<String> calculateAllPossiblePhoneNumbers(String[] input) {
+        int[] integerInput = parseInputToIntArray(input);
+        this.interpretation = 0;
+        ArrayList<String> results = new ArrayList<>();
+        allPossiblePhoneNumbers(integerInput, 0, new ArrayList<>(), results);
+        return results;
+    }
+
+    /**
+     * The method disambiguateTwoDigitNumbers disambiguates a two digit positive
+     * integer
+     *
+     * @param n1 is the number to be disambiguated
+     * @param n2 is the number that follows after n1
+     * @return an ArrayList with all the possible combinations given as integers
+     */
     private ArrayList<String> disambiguateTwoDigitNumbers(int n1, int n2) {
         ArrayList<String> result = new ArrayList<>();
         if ((n1 % 10 == 0) && (n2 < 10) && (n2 != 0)) {
-            int case1 = n1 / 10;//3
-            int case2 = n1;//30
+            int case1 = n1 / 10;
+            int case2 = n1;
             String c1 = Integer.toString(case1);
             String c2 = Integer.toString(case2);
             result.add(c1);
@@ -40,6 +71,15 @@ public class NumberDisambiguation {
         return result;
     }
 
+    /**
+     * The method disambiguateThreeDigitNumbers disambiguates a three digit
+     * positive integer
+     *
+     * @param n1 is the number to be disambiguated
+     * @param n2 is the number that follows after n1
+     * @return an ArrayList with all the possible combinations given as integers
+     *
+     */
     private ArrayList<String> disambiguateThreeDigitNumbers(int n1, int n2) {
         ArrayList<String> result = new ArrayList<>();//n2 is the next number maybe use 
         //in 2digits disambiguation
@@ -68,6 +108,15 @@ public class NumberDisambiguation {
         return result;
     }
 
+    /**
+     * The method disambiguateTheNumbers disambiguates positive integers that
+     * have maximum three digits and returns all possible combinations
+     *
+     * @param n1 is the positive integer that will be disambiguated
+     * @param n2 is the number that follows after n1
+     * @return ArrayList with all the possible combinations given as numeric
+     * Strings
+     */
     private ArrayList<String> disambiguateTheNumbers(int n1, int n2) {
         ArrayList<String> result = new ArrayList<>();
         if ((n1 >= 0) && (n1 < 10)) {
@@ -89,6 +138,11 @@ public class NumberDisambiguation {
         return result;
     }
 
+    /**
+     * The method parseInputToIntArray parses a String Array to an int array. 
+     * @param n is a String Array that consists of numeric strings
+     * @return an int array
+     */
     private int[] parseInputToIntArray(String[] n) {
         int[] phoneNumber = new int[n.length];
         try {
@@ -101,15 +155,20 @@ public class NumberDisambiguation {
         return phoneNumber;
     }
 
-    public ArrayList<String> calculateAllPossiblePhoneNumbers(String[] input) {
-        int[] integerInput = parseInputToIntArray(input);
-        this.interpretation = 0;
-        ArrayList<String> results = new ArrayList<>();
-        allPossiblePhoneNumbers(integerInput, 0, new ArrayList<>(), results);
-        // System.out.println(result.toString());
-        return results;
-    }
-
+    /**
+     * The method allPossiblePhoneNumbers takes the given phone number in the
+     * form of int array, disambiguates the numbers and then calculates all of
+     * their possible combinations and validates them
+     *
+     * @param input is the given phone number
+     * @param index is the index for the recursion
+     * @param buffer temporary stores a tree branch that contains a possible
+     * phone number
+     * @param result this  will hold the possible phone numbers
+     * @return result is an ArrayList with all possible phone numbers 
+     * and their status as valid or invalid, given as string in the form of:
+     * "Interpretation 1: 21693664	[phone number: INVALID]"
+     */
     private ArrayList<String> allPossiblePhoneNumbers(int[] input, int index, ArrayList<String> buffer, ArrayList<String> result) {
         int next = 0;
 
@@ -144,7 +203,7 @@ public class NumberDisambiguation {
             }
 
         }
-        //result.add(buffer.toString());
+
         return result;
     }
 
