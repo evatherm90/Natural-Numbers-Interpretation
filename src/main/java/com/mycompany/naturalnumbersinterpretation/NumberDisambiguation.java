@@ -81,11 +81,10 @@ public class NumberDisambiguation {
      *
      */
     private ArrayList<String> disambiguateThreeDigitNumbers(int n1, int n2) {
-        ArrayList<String> result = new ArrayList<>();//n2 is the next number maybe use 
-        //in 2digits disambiguation
-        if (n1 % 100 != 0) {//429
-            int case1 = n1 - (n1 % 100);//400
-            int case2 = (n1 - (n1 % 100)) / 100;//4
+        ArrayList<String> result = new ArrayList<>();
+        if (n1 % 100 != 0) {
+            int case1 = n1 - (n1 % 100);
+            int case2 = (n1 - (n1 % 100)) / 100;
             String c1 = Integer.toString(case1);
             String c2 = Integer.toString(case2);
             int mod = n1 % 100;
@@ -139,7 +138,8 @@ public class NumberDisambiguation {
     }
 
     /**
-     * The method parseInputToIntArray parses a String Array to an int array. 
+     * The method parseInputToIntArray parses a String Array to an int array.
+     *
      * @param n is a String Array that consists of numeric strings
      * @return an int array
      */
@@ -164,9 +164,9 @@ public class NumberDisambiguation {
      * @param index is the index for the recursion
      * @param buffer temporary stores a tree branch that contains a possible
      * phone number
-     * @param result this  will hold the possible phone numbers
-     * @return result is an ArrayList with all possible phone numbers 
-     * and their status as valid or invalid, given as string in the form of:
+     * @param result this will hold the possible phone numbers
+     * @return result is an ArrayList with all possible phone numbers and their
+     * status as valid or invalid, given as string in the form of:
      * "Interpretation 1: 21693664	[phone number: INVALID]"
      */
     private ArrayList<String> allPossiblePhoneNumbers(int[] input, int index, ArrayList<String> buffer, ArrayList<String> result) {

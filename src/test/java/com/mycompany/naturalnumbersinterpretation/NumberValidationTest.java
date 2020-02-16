@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author antonis
+ * 
  */
 public class NumberValidationTest {
 
@@ -37,160 +37,159 @@ public class NumberValidationTest {
     public void tearDown() {
     }
 
-
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsStartingWith2() {       
+    public void testValidateStartOfDigitsStartingWith2() {
         String number = "2106930664";
         NumberValidation instance = new NumberValidation();
         boolean expResult = true;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-        
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsStartingWith69() {       
+    public void testValidateStartOfDigitsStartingWith69() {
         String number = "6972413502";
         NumberValidation instance = new NumberValidation();
         boolean expResult = true;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-        
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsStartingWith00302() {       
+    public void testValidateStartOfDigitsStartingWith00302() {
         String number = "00302106930664";
         NumberValidation instance = new NumberValidation();
         boolean expResult = true;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-        
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsStartingWith003069() {       
+    public void testValidateStartOfDigitsStartingWith003069() {
         String number = "00306972413502";
         NumberValidation instance = new NumberValidation();
         boolean expResult = true;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-        
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsTooLongStartingWith2() {       
+    public void testValidateStartOfDigitsTooLongStartingWith2() {
         String number = "21069300664";
         NumberValidation instance = new NumberValidation();
         boolean expResult = false;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-       
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsTooLongStartingWith69() {       
+    public void testValidateStartOfDigitsTooLongStartingWith69() {
         String number = "69724135029";
         NumberValidation instance = new NumberValidation();
         boolean expResult = false;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-       
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsTooLongStartingWith00302() {       
+    public void testValidateStartOfDigitsTooLongStartingWith00302() {
         String number = "003021069300664";
         NumberValidation instance = new NumberValidation();
         boolean expResult = false;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-       
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsTooLongStartingWith003069() {       
+    public void testValidateStartOfDigitsTooLongStartingWith003069() {
         String number = "00306969724135029";
         NumberValidation instance = new NumberValidation();
         boolean expResult = false;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-       
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsTooShortStartingWith2() {       
+    public void testValidateStartOfDigitsTooShortStartingWith2() {
         String number = "210693006";
         NumberValidation instance = new NumberValidation();
         boolean expResult = false;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-       
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsTooShortStartingWith69() {       
+    public void testValidateStartOfDigitsTooShortStartingWith69() {
         String number = "697241350";
         NumberValidation instance = new NumberValidation();
         boolean expResult = false;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-       
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsTooShortStartingWith00302() {       
+    public void testValidateStartOfDigitsTooShortStartingWith00302() {
         String number = "0030210693006";
         NumberValidation instance = new NumberValidation();
         boolean expResult = false;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-       
+
     }
-    
+
     /**
      * Test of validateStartOfDigits method, of class NumberValidation.
      */
     @Test
-    public void testValidateStartOfDigitsTooShortStartingWith003069() {       
+    public void testValidateStartOfDigitsTooShortStartingWith003069() {
         String number = "003069697241350";
         NumberValidation instance = new NumberValidation();
         boolean expResult = false;
         boolean result = instance.validateStartOfDigits(number);
         assertEquals(expResult, result);
-       
+
     }
 }

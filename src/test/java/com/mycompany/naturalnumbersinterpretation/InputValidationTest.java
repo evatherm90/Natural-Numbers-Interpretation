@@ -18,7 +18,7 @@ import static sun.awt.X11.XConstants.InputOutput;
 
 /**
  *
- * @author antonis
+ * 
  */
 public class InputValidationTest {
 
@@ -52,8 +52,8 @@ public class InputValidationTest {
         boolean expResult = true;
         boolean result = instance.isValid(n);
         assertEquals(expResult, result);
-        }
-    
+    }
+
     /**
      * Test of isValid method, of class InputValidation.
      */
@@ -65,27 +65,27 @@ public class InputValidationTest {
         boolean expResult = false;
         boolean result = instance.isValid(n);
         assertEquals(expResult, result);
-        }
+    }
 
     /**
      * Test of isValid method, of class InputValidation.
      */
     @Test
     public void testIsValidWithNoNumericCharacters() {
-        
+
         String[] n = {"10", "l", "9", "30", "9", "6", "4"};
         InputValidation instance = new InputValidation();
         boolean expResult = false;
         boolean result = instance.isValid(n);
         assertEquals(expResult, result);
-        }
+    }
 
     /**
      * Test of isValid method, of class InputValidation.
      */
     @Test
     public void testIsValidWithNegativeNumbers() {
-        
+
         String[] n = {"10", "-3", "9", "30", "9", "6", "4"};
         InputValidation instance = new InputValidation();
         boolean expResult = false;
@@ -123,7 +123,7 @@ public class InputValidationTest {
         // TODO review the generated test code and remove the default call to fail.
 
     }
-    
+
     /**
      * Test of getInput method, of class InputValidation.
      */
@@ -132,7 +132,7 @@ public class InputValidationTest {
 
         InputValidation inputOutput = new InputValidation();
         String input = "fhwit 4hd9b saf#";
-         String []expResult = {"fhwit", "4hd9b", "saf#"};
+        String[] expResult = {"fhwit", "4hd9b", "saf#"};
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         Assert.assertArrayEquals(expResult, inputOutput.getInput());

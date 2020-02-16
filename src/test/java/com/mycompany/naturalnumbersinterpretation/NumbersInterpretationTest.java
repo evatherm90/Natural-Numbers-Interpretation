@@ -9,15 +9,13 @@ import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
- * @author antonis
+ * 
  */
 public class NumbersInterpretationTest {
 
@@ -48,17 +46,13 @@ public class NumbersInterpretationTest {
         String[] args = null;
         final InputStream original = System.in;
         String input = "fhwit 4hd9b saf#";
-//         String []expResult = {"fhwit", "4hd9b", "saf#"};
         InputStream in = new ByteArrayInputStream(input.getBytes());
-
         System.setIn(in);
         NumbersInterpretation.main(args);
-
         input = "2 45";
         in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
         NumbersInterpretation.main(args);
-        
         System.setIn(original);
 
     }
